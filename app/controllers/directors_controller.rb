@@ -36,4 +36,19 @@ class DirectorsController < ApplicationController
 
     render({ :template => "director_templates/eldest" })
   end
+
+  def create
+    @director = Director.new
+    @director.name = params.fetch("director_name")
+    @director.dob = params.fetch("director_dob")
+    @director.bio = params.fetch("director_bio")
+    @director.image = params.fetch("director_image")
+
+    if @director.valid?
+      @director.save
+      redirect_to("/directors", { :notice => "Director created successfully." })
+    else
+      redirect_to("/directors", { :notice => "Director failed to create successfully." })
+    end  
+  end
 end
