@@ -51,4 +51,29 @@ class DirectorsController < ApplicationController
       redirect_to("/directors", { :notice => "Director failed to create successfully." })
     end  
   end
+
+  def update
+    director_id = params.fetch("path_id")
+    @director = Director.where({:id => director_id}).at(0)
+    @director.name = params.fetch("director_name")
+    @director.dob = params.fetch("director_dob")
+    @director.bio = params.fetch("director_bio")
+    @director.image = params.fetch("director_image")
+
+    if @director.valid?
+      @director.save
+      redirect_to("/directors", { :notice => "Director updated successfully." })
+    else
+      redirect_to("/directors", { :notice => "Director failed to update successfully." })
+    end  
+
+  end
+
+  def delete
+    director_id = params.fetch("path_id")
+    @director = Director.where({:id => director_id}).at(0)
+    @director.destroy
+    redirect_to("/directors", { :notice => "Director deleted succesfully."})
+  end
+
 end
