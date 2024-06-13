@@ -13,7 +13,7 @@
 <hr>
 
 <form action="/update_movie/<%=@the_movie.id%>" method="post">
-  <div>
+    <div>
       <label for="title_id">
         Title
       </label>
@@ -41,13 +41,13 @@
       <label for="image_id">
         Image
       </label>
-      <input type="url" id="image_id" name="movie_image" value="<%=@the_movie.image%>">
+      <input type="text" id="image_id" name="movie_image" value="<%=@the_movie.image%>">
     </div>
     <div>
       <label for="director_id">
         Director ID
       </label>
-      <input type="text" id="director_id" name="movie_director">
+      <input type="text" id="director_id" name="movie_director" value="<%=@the_movie.director_id%>">
     </div>
   <button>Update movie</button>
 </form>
