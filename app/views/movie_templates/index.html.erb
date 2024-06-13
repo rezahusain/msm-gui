@@ -3,6 +3,46 @@
 </h1>
 
 <hr>
+  <form action="/insert_movie" method="post">
+    <div>
+      <label for="title_id">
+        Title
+      </label>
+      <input type="text" id="title_id" name="movie_title">
+    </div>
+    <div>
+      <label for="year_id">
+        Year
+      </label>
+      <input type="text" id="year_id" name="movie_year">
+    </div>
+    <div>
+      <label for="duration_id">
+        Duration
+      </label>
+      <input type="text" id="duration_id" name="movie_duration">
+    </div>
+    <div>
+      <label for="description_id">
+        Description
+      </label>
+      <textarea id="description_id" name="movie_description" rows="3"></textarea>
+    </div>
+    <div>
+      <label for="image_id">
+        Image
+      </label>
+      <input type="url" id="image_id" name="movie_image">
+    </div>
+    <div>
+      <label for="director_id">
+        Director ID
+      </label>
+      <input type="text" id="director_id" name="movie_director">
+    </div>
+    <button>Create movie</button>
+  </form>
+<hr>
 
 <table border="1">
   <tr>
